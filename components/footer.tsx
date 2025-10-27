@@ -14,11 +14,12 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">E</span>
-              </div>
-              <span className="font-bold text-xl">Elite Elevators</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/mechatronics-elevators-logo.png" 
+                alt="Mechatronics Elevators Logo" 
+                className="h-16 w-auto"
+              />
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-4">{t.footer.description}</p>
             <div className="flex gap-4">
@@ -94,7 +95,7 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/80 text-sm">
-            © {new Date().getFullYear()} Elite Elevators. {t.footer.rights}
+            © {new Date().getFullYear()} Mechatronics Elevators. {t.footer.rights}
           </p>
         </div>
       </div>

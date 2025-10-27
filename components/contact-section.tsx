@@ -56,15 +56,14 @@ export function ContactSection() {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">{t.contact.title}</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t.contact.subtitle}</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance animate-fade-in-up">{t.contact.title}</h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card>
+          <Card className="animate-fade-in-up animation-delay-400 hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
-              <CardTitle>{locale === "ar" ? "أرسل لنا رسالة" : "Send us a message"}</CardTitle>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300">{locale === "ar" ? "أرسل لنا رسالة" : "Send us a message"}</CardTitle>
               <CardDescription>
                 {locale === "ar" ? "سنرد عليك في أقرب وقت ممكن" : "We'll get back to you as soon as possible"}
               </CardDescription>
@@ -72,27 +71,27 @@ export function ContactSection() {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Input name="name" placeholder={t.contact.name} required />
+                  <Input name="name" placeholder={t.contact.name} required className="transition-all duration-300 focus:scale-105" />
                 </div>
                 <div>
-                  <Input name="email" type="email" placeholder={t.contact.email} required />
+                  <Input name="email" type="email" placeholder={t.contact.email} required className="transition-all duration-300 focus:scale-105" />
                 </div>
                 <div>
-                  <Input name="phone" type="tel" placeholder={t.contact.phone} />
+                  <Input name="phone" type="tel" placeholder={t.contact.phone} className="transition-all duration-300 focus:scale-105" />
                 </div>
                 <div>
-                  <Textarea name="message" placeholder={t.contact.message} rows={5} required />
+                  <Textarea name="message" placeholder={t.contact.message} rows={5} required className="transition-all duration-300 focus:scale-105" />
                 </div>
                 {message && (
                   <div
-                    className={`p-3 rounded-lg text-sm ${
+                    className={`p-3 rounded-lg text-sm animate-scale-in ${
                       message.type === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
                     }`}
                   >
                     {message.text}
                   </div>
                 )}
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                <Button type="submit" className="w-full hover:scale-105 transition-transform duration-300 hover:shadow-lg" disabled={isSubmitting}>
                   {isSubmitting ? t.contact.sending : t.contact.send}
                 </Button>
               </form>
@@ -101,47 +100,60 @@ export function ContactSection() {
 
           {/* Contact Information */}
           <div className="space-y-6">
-            <Card>
+            <Card className="animate-fade-in-up animation-delay-600 hover:shadow-lg transition-all duration-300 hover:scale-105 group">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                    <Phone className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">{locale === "ar" ? "اتصل بنا" : "Call Us"}</h3>
-                    <p className="text-muted-foreground">+20 123 456 7890</p>
-                    <p className="text-muted-foreground">+20 123 456 7891</p>
+                    <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">{locale === "ar" ? "اتصل بنا" : "Call Us"}</h3>
+                    <p className="text-muted-foreground" dir="ltr">+2010 2457 9810</p>
+                    <p className="text-muted-foreground" dir="ltr">+2011 1934 1239</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="animate-fade-in-up animation-delay-700 hover:shadow-lg transition-all duration-300 hover:scale-105 group">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                    <Mail className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">{locale === "ar" ? "راسلنا" : "Email Us"}</h3>
-                    <p className="text-muted-foreground">info@eliteelevators.com</p>
-                    <p className="text-muted-foreground">sales@eliteelevators.com</p>
+                    <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">{locale === "ar" ? "راسلنا" : "Email Us"}</h3>
+                    <p className="text-muted-foreground">mechatronicselevators1@gmail.com</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="animate-fade-in-up animation-delay-800 hover:shadow-lg transition-all duration-300 hover:scale-105 group">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                    <MapPin className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">{locale === "ar" ? "زورنا" : "Visit Us"}</h3>
-                    <p className="text-muted-foreground">
-                      {locale === "ar" ? "123 شارع الأعمال، القاهرة، مصر" : "123 Business Street, Cairo, Egypt"}
-                    </p>
+                    <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">{locale === "ar" ? "زورنا" : "Visit Us"}</h3>
+                    <div className="text-muted-foreground">
+                      {locale === "ar" ? (
+                        <div>
+                          <p className="font-medium mb-2">الفرع الرئيسي:</p>
+                          <p className="mb-3">برج أ - ابراج بنك مصر ش خاتم المرسلين - الهرم - الجيزة</p>
+                          <p className="font-medium mb-2">فرع حدائق أكتوبر:</p>
+                          <p>19 كومبوند الرايات ريزيدنس - حدائق أكتوبر - الجيزة</p>
+                        </div>
+                      ) : (
+                        <div>
+                          <p className="font-medium mb-2">Main Branch:</p>
+                          <p className="mb-3">Tower A - Banque Misr Towers, Khatam Al-Mursaleen St. - Al-Haram - Giza</p>
+                          <p className="font-medium mb-2">October Gardens Branch:</p>
+                          <p>19 Al-Rayat Residence Compound - October Gardens - Giza</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </CardContent>

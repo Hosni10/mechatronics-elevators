@@ -14,21 +14,27 @@ export function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src="/modern-elevator-shaft-interior-with-sleek-metallic.jpg" alt="Elevator background" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80" />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 pt-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">{t.hero.title}</h1>
-          <p className="text-xl md:text-2xl text-accent font-medium mb-4">{t.hero.subtitle}</p>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">{t.hero.description}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-base">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance animate-fade-in-up">
+            {t.hero.title}
+          </h1>
+          <p className="text-xl md:text-2xl text-accent font-medium mb-4 animate-fade-in-up animation-delay-200">
+            {t.hero.subtitle}
+          </p>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty animate-fade-in-up animation-delay-400">
+            {t.hero.description}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
+            <Button size="lg" className="text-base hover:scale-105 transition-transform duration-300 hover:shadow-lg">
               {t.hero.cta}
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="text-base bg-transparent">
+            <Button size="lg" variant="outline" className="text-base bg-transparent hover:scale-105 transition-transform duration-300 hover:shadow-lg">
               {t.hero.ctaSecondary}
             </Button>
           </div>
@@ -37,12 +43,12 @@ export function HeroSection() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-5xl mx-auto">
           {[
-            { value: "25+", label: t.stats.experience },
+            { value: "20+", label: t.stats.experience },
             { value: "500+", label: t.stats.projects },
             { value: "300+", label: t.stats.clients },
-            { value: "50+", label: t.stats.engineers },
+            { value: "20+", label: t.stats.engineers },
           ].map((stat, index) => (
-            <div key={index} className="text-center">
+            <div key={index} className="text-center animate-fade-in-up hover:scale-105 transition-transform duration-300" style={{ animationDelay: `${800 + index * 100}ms` }}>
               <div className="text-4xl md:text-5xl font-bold text-accent mb-2">{stat.value}</div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
