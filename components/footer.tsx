@@ -36,7 +36,7 @@ export function Footer() {
                 <FaXTwitter className="h-5 w-5" />
               </a>
               <a
-                href="www.linkedin.com/in/mechatronics-elevators-417aa738b "
+                href="http://www.linkedin.com/in/mechatronics-elevators-417aa738b"
                 className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
                 <FaLinkedin className="h-5 w-5" />
