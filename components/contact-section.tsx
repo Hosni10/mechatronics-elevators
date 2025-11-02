@@ -1,11 +1,5 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, Phone, MapPin } from "lucide-react"
 import { useLocale } from "@/contexts/locale-context"
@@ -15,43 +9,6 @@ import { ScrollAnimation } from "@/components/scroll-animation"
 export function ContactSection() {
   const { locale } = useLocale()
   const t = getTranslations(locale)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null)
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setMessage(null)
-
-    const formData = new FormData(e.currentTarget)
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      message: formData.get("message"),
-    }
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-
-      if (response.ok) {
-        setMessage({ type: "success", text: t.contact.success })
-        e.currentTarget.reset()
-      } else {
-        setMessage({ type: "error", text: t.contact.error })
-      }
-    } catch (error) {
-      setMessage({ type: "error", text: t.contact.error })
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   return (
     <section id="contact" className="py-20">
@@ -63,44 +20,30 @@ export function ContactSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
+          {/* Google Maps */}
           <ScrollAnimation animation="slide-in-right" delay={400}>
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-            <CardHeader>
-              <CardTitle className="group-hover:text-primary transition-colors duration-300">{locale === "ar" ? "أرسل لنا رسالة" : "Send us a message"}</CardTitle>
-              <CardDescription>
-                {locale === "ar" ? "سنرد عليك في أقرب وقت ممكن" : "We'll get back to you as soon as possible"}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Input name="name" placeholder={t.contact.name} required className="transition-all duration-300 focus:scale-105" />
+            <Card className="hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+              <CardHeader>
+                <CardTitle className="group-hover:text-primary transition-colors duration-300">{locale === "ar" ? "موقعنا" : "Our Location"}</CardTitle>
+                <CardDescription>
+                  {locale === "ar" ? "زورنا في موقعنا" : "Visit us at our location"}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-0">
+                <div className="w-full h-[450px] rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d575.0652428167531!2d31.203361467923038!3d30.004600368975623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14584777e1d0fa9d%3A0x914a4dd3e99ebcc7!2z2YXZitmD2KfYqtix2YjZhtmK2YPYsyDZhNmE2YXYtdin2LnYrw!5e0!3m2!1sen!2seg!4v1762091785926!5m2!1sen!2seg"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full"
+                  />
                 </div>
-                <div>
-                  <Input name="email" type="email" placeholder={t.contact.email} required className="transition-all duration-300 focus:scale-105" />
-                </div>
-                <div>
-                  <Input name="phone" type="tel" placeholder={t.contact.phone} className="transition-all duration-300 focus:scale-105" />
-                </div>
-                <div>
-                  <Textarea name="message" placeholder={t.contact.message} rows={5} required className="transition-all duration-300 focus:scale-105" />
-                </div>
-                {message && (
-                  <div
-                    className={`p-3 rounded-lg text-sm animate-scale-in ${
-                      message.type === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
-                    }`}
-                  >
-                    {message.text}
-                  </div>
-                )}
-                <Button type="submit" className="w-full hover:scale-105 transition-transform duration-300 hover:shadow-lg" disabled={isSubmitting}>
-                  {isSubmitting ? t.contact.sending : t.contact.send}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
           </ScrollAnimation>
 
           {/* Contact Information */}
