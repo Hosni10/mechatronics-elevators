@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronDown } from "lucide-react"
 import { useLocale } from "@/contexts/locale-context"
 import { getTranslations } from "@/lib/translations"
+import { AnimatedNumber } from "@/components/animated-number"
 
 export function HeroSection() {
   const { locale } = useLocale()
@@ -49,7 +50,9 @@ export function HeroSection() {
             { value: "20+", label: t.stats.engineers },
           ].map((stat, index) => (
             <div key={index} className="text-center animate-fade-in-up hover:scale-105 transition-transform duration-300" style={{ animationDelay: `${800 + index * 100}ms` }}>
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">{stat.value}</div>
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                <AnimatedNumber value={stat.value} duration={2000} />
+              </div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}

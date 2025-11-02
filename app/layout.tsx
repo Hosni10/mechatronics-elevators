@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { LocaleProvider } from "@/contexts/locale-context"
 import { Suspense } from "react"
 import "./globals.css"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export const metadata: Metadata = {
   title: "Elite Elevators - Premium Elevator Solutions",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <LocaleProvider>{children}</LocaleProvider>
           <Analytics />
+          <WhatsAppButton />
         </Suspense>
       </body>
     </html>

@@ -2,7 +2,7 @@
 
 import { useLocale } from "@/contexts/locale-context"
 import { getTranslations } from "@/lib/translations"
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import { FaFacebook, FaLinkedin, FaInstagram, FaXTwitter, FaTiktok } from "react-icons/fa6"
 
 export function Footer() {
   const { locale } = useLocale()
@@ -24,28 +24,34 @@ export function Footer() {
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-4">{t.footer.description}</p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/Mechatronlcs.Elevators"
                 className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
-                <Facebook className="h-5 w-5" />
+                <FaFacebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://x.com/mechatroni69769?s=21"
                 className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
-                <Twitter className="h-5 w-5" />
+                <FaXTwitter className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="www.linkedin.com/in/mechatronics-elevators-417aa738b "
                 className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
-                <Linkedin className="h-5 w-5" />
+                <FaLinkedin className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/mechatronics_elevators1?igsh=MWJvN3J2emM2Z3RxbA=="
                 className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
-                <Instagram className="h-5 w-5" />
+                <FaInstagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@mechatronicselevators1?is_from_webapp=1&sender_device=pc "
+                className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
+              >
+                <FaTiktok className="h-5 w-5" />
               </a>
             </div>
           </div>

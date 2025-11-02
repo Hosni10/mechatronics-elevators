@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Mail, Phone, MapPin } from "lucide-react"
 import { useLocale } from "@/contexts/locale-context"
 import { getTranslations } from "@/lib/translations"
+import { ScrollAnimation } from "@/components/scroll-animation"
 
 export function ContactSection() {
   const { locale } = useLocale()
@@ -56,12 +57,15 @@ export function ContactSection() {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance animate-fade-in-up">{t.contact.title}</h2>
+          <ScrollAnimation animation="fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">{t.contact.title}</h2>
+          </ScrollAnimation>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="animate-fade-in-up animation-delay-400 hover:shadow-lg transition-shadow duration-300">
+          <ScrollAnimation animation="slide-in-right" delay={400}>
+            <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="group-hover:text-primary transition-colors duration-300">{locale === "ar" ? "أرسل لنا رسالة" : "Send us a message"}</CardTitle>
               <CardDescription>
@@ -97,10 +101,12 @@ export function ContactSection() {
               </form>
             </CardContent>
           </Card>
+          </ScrollAnimation>
 
           {/* Contact Information */}
           <div className="space-y-6">
-            <Card className="animate-fade-in-up animation-delay-600 hover:shadow-lg transition-all duration-300 hover:scale-105 group">
+            <ScrollAnimation animation="slide-in-left" delay={600}>
+              <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 group">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
@@ -114,8 +120,10 @@ export function ContactSection() {
                 </div>
               </CardContent>
             </Card>
+            </ScrollAnimation>
 
-            <Card className="animate-fade-in-up animation-delay-700 hover:shadow-lg transition-all duration-300 hover:scale-105 group">
+            <ScrollAnimation animation="slide-in-left" delay={700}>
+              <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 group">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
@@ -128,8 +136,10 @@ export function ContactSection() {
                 </div>
               </CardContent>
             </Card>
+            </ScrollAnimation>
 
-            <Card className="animate-fade-in-up animation-delay-800 hover:shadow-lg transition-all duration-300 hover:scale-105 group">
+            <ScrollAnimation animation="slide-in-left" delay={800}>
+              <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 group">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
@@ -158,6 +168,7 @@ export function ContactSection() {
                 </div>
               </CardContent>
             </Card>
+            </ScrollAnimation>
           </div>
         </div>
       </div>

@@ -44,6 +44,8 @@ export const translations = {
     about: {
       title: "Why Choose Us",
       subtitle: "Leading expertise in elevators and escalators",
+      content:
+        "Mechatronics Elevators brings over 20 years of experience in the installation, maintenance, and modernization of elevators and escalators. We take pride in delivering projects across a wide range of sectors — including residential towers, hospitals, restaurants, factories, and commercial centers — throughout several governorates across Egypt. We are committed to providing integrated engineering solutions built on the highest standards of safety and quality, with a professional team ensuring reliable performance and seamless operation in every project",
       quality: "Premium Quality",
       qualityDesc: "International standards and certifications",
       safety: "Safety First",
@@ -115,6 +117,8 @@ export const translations = {
     about: {
       title: "لماذا تختارنا",
       subtitle: "خبرة رائدة في مجال المصاعد والسلالم المتحركة",
+      content:
+        "شركة ميكاترونكس للمصاعد تمتلك خبرة تمتد لأكثر من 20 عامًا في تركيب وصيانة وتجديد المصاعد والسلالم المتحركة. نفخر بتنفيذ مشاريعنا في مختلف القطاعات، بما في ذلك الأبراج السكنية، والمستشفيات، والمطاعم، والمصانع، والمراكز التجارية، في عدد من المحافظات على مستوى جمهورية مصر العربية. نلتزم بتقديم حلول هندسية متكاملة تعتمد على أعلى معايير الأمان والجودة، مع فريق متخصص يضمن الأداء الموثوق والتشغيل السلس في كل مشروع",
       quality: "جودة عالية",
       qualityDesc: "معايير وشهادات دولية",
       safety: "السلامة أولاً",
