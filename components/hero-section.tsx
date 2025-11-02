@@ -31,11 +31,25 @@ export function HeroSection() {
             {t.hero.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
-            <Button size="lg" className="text-base hover:scale-105 transition-transform duration-300 hover:shadow-lg">
+            <Button 
+              size="lg" 
+              className="text-base hover:scale-105 transition-transform duration-300 hover:shadow-lg cursor-pointer"
+              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeRIHOFhN4QuQciQ24TmhknOj1KaWYv5ryo14kJ8inbgo6YgQ/viewform?usp=publish-editor', '_blank', 'noopener,noreferrer')}
+            >
               {t.hero.cta}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="text-base bg-transparent hover:scale-105 transition-transform duration-300 hover:shadow-lg">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-base bg-transparent hover:scale-105 transition-transform duration-300 hover:shadow-lg cursor-pointer"
+              onClick={() => {
+                const contactSection = document.getElementById('contact')
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+            >
               {t.hero.ctaSecondary}
             </Button>
           </div>
