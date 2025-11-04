@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Elite Elevators - Premium Elevator Solutions",
   description: "Leading provider of innovative elevator and escalator systems with over 25 years of experience",
   generator: "v0.app",
+  icons: {
+    icon: "/mechatronics-elevators-logo.png",
+    shortcut: "/mechatronics-elevators-logo.png",
+    apple: "/mechatronics-elevators-logo.png",
+  },
 }
 
 export default function RootLayout({
