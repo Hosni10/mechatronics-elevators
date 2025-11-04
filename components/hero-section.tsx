@@ -19,18 +19,18 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 pt-20">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance animate-fade-in-up">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 text-balance animate-fade-in-up px-2">
             {t.hero.title}
           </h1>
-          <p className="text-xl md:text-2xl text-accent font-medium mb-4 animate-fade-in-up animation-delay-200">
+          <p className="text-lg sm:text-xl md:text-2xl text-accent font-medium mb-3 sm:mb-4 animate-fade-in-up animation-delay-200 px-2">
             {t.hero.subtitle}
           </p>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty animate-fade-in-up animation-delay-400">
+          <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto text-pretty animate-fade-in-up animation-delay-400 px-2">
             {t.hero.description}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-600 px-2">
             <Button 
               size="lg" 
               className="text-base hover:scale-105 transition-transform duration-300 hover:shadow-lg cursor-pointer"
@@ -56,7 +56,7 @@ export function HeroSection() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-12 sm:mt-16 md:mt-20 max-w-5xl mx-auto px-4">
           {[
             { value: "20+", label: t.stats.experience },
             { value: "500+", label: t.stats.projects },
@@ -64,18 +64,18 @@ export function HeroSection() {
             { value: "20+", label: t.stats.engineers },
           ].map((stat, index) => (
             <div key={index} className="text-center animate-fade-in-up hover:scale-105 transition-transform duration-300" style={{ animationDelay: `${800 + index * 100}ms` }}>
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-1 sm:mb-2">
                 <AnimatedNumber value={stat.value} duration={2000} />
               </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-xs sm:text-sm text-muted-foreground px-1">{stat.label}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <ChevronDown className="h-8 w-8 text-muted-foreground" />
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8 text-muted-foreground" />
       </div>
     </section>
   )

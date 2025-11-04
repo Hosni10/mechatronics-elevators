@@ -39,16 +39,16 @@ export function ProjectsSection() {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+    <section id="projects" className="py-12 sm:py-16 md:py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12">
           <ScrollAnimation animation="fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 text-balance px-2">
               {locale === "ar" ? "مشاريعنا المميزة" : "Featured Projects"}
             </h2>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in-up" delay={200}>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
               {locale === "ar"
                 ? "نفخر بتقديم حلول مبتكرة لمشاريع متنوعة في جميع أنحاء جمهورية مصر العربية"
                 : "Proud to deliver innovative solutions for diverse projects across the country"}
@@ -56,12 +56,12 @@ export function ProjectsSection() {
           </ScrollAnimation>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <ScrollAnimation key={index} animation="scale-in" delay={400 + index * 200}>
               <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 group">
                 <div 
-                  className="relative h-80 overflow-hidden cursor-pointer"
+                  className="relative h-48 sm:h-64 md:h-80 overflow-hidden cursor-pointer"
                   onClick={() => setSelectedProject(index)}
                 >
                   <img
@@ -73,9 +73,9 @@ export function ProjectsSection() {
                     {project.type}
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm">{project.location}</p>
+                <CardContent className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">{project.location}</p>
                 </CardContent>
               </Card>
             </ScrollAnimation>

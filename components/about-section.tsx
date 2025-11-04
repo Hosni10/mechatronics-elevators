@@ -34,25 +34,25 @@ export function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+    <section id="about" className="py-12 sm:py-16 md:py-20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12">
           <ScrollAnimation animation="fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">{t.about.title}</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 text-balance px-2">{t.about.title}</h2>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in-up" delay={200}>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t.about.subtitle}</p>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">{t.about.subtitle}</p>
           </ScrollAnimation>
           {t.about.content && (
             <ScrollAnimation animation="fade-in-up" delay={300}>
-              <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
                 {t.about.content}
               </p>
             </ScrollAnimation>
           )}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (

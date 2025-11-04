@@ -22,14 +22,14 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border animate-slide-down">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
+          <a href="#home" className="flex items-center gap-2 sm:gap-3 hover:scale-105 transition-transform duration-300">
             <img 
               src="/mechatronics-elevators-logo.png" 
               alt="Mechatronics Elevators Logo" 
-              className="h-16 w-auto"
+              className="h-12 w-auto sm:h-14 md:h-16"
             />
           </a>
 

@@ -10,15 +10,15 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="grid md:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
               <img 
                 src="/mechatronics-elevators-logo.png" 
                 alt="Mechatronics Elevators Logo" 
-                className="h-16 w-auto"
+                className="h-12 w-auto sm:h-14 md:h-16"
               />
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-4">{t.footer.description}</p>

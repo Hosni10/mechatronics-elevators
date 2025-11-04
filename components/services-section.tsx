@@ -29,18 +29,18 @@ export function ServicesSection() {
   ]
 
   return (
-    <section id="services" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+    <section id="services" className="py-12 sm:py-16 md:py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12">
           <ScrollAnimation animation="fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">{t.services.title}</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 text-balance px-2">{t.services.title}</h2>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in-up" delay={200}>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t.services.subtitle}</p>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">{t.services.subtitle}</p>
           </ScrollAnimation>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto items-stretch">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
